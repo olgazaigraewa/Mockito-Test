@@ -1,12 +1,12 @@
 package com.example.mockitotest.service;
 
 import com.example.mockitotest.dao.UserDao;
+import com.example.mockitotest.dao.UserDaoImpl;
 import com.example.mockitotest.model.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.Mockito.when;
@@ -14,18 +14,10 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class UserServiceImplTest {
 
-    @Mock
-    private UserDao dao;
-    private final UserService userService;
+   private final UserDao dao = Mockito.mock(UserDaoImpl.class);
+   private final UserService userService = new UserServiceImpl(dao);
 
-    public UserServiceImplTest() {
-        MockitoAnnotations.initMocks(this);
-        this.userService = new UserServiceImpl(dao);
-    }
 
-    /**
-     * ставим заглушку
-     */
     @Test
     public void checkUserExistIsTrue(){
         when(dao.findUserByName("Сергей")).thenReturn(new User("Сергей"));

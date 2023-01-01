@@ -1,19 +1,22 @@
 package com.example.mockitotest.model;
 
+
 import java.util.Objects;
 
-public class User {
+public class  User {
     private int id;
     private String name;
     private int age;
 
-    public User(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+
 
     public User(String name) {
         this.name = name;
+    }
+
+    public User(java.lang.String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
     public int getId() {

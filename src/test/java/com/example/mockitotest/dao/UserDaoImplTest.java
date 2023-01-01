@@ -3,8 +3,8 @@ package com.example.mockitotest.dao;
 import com.example.mockitotest.model.User;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class UserDaoImplTest {
     private  final User correctUser = new User("Антон", 27);

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class UserDaoImpl implements UserDao {
 
-    private List<User>list;
+    private final List<User>list;
 
     public UserDaoImpl() {
         this.list = Arrays.asList(
